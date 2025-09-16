@@ -1,6 +1,6 @@
 "use client";
 
-import Book  from "@/lib/types";
+import { Book } from "@/lib/types";
 import {
   Card,
   CardContent,

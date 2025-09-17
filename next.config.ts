@@ -1,10 +1,15 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    // permitir domínios usados nas capas (ex: example.com). Adicione mais domínios conforme necessário.
-    domains: ["example.com"],
+    domains: ["example.com"], // antigo
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'm.media-amazon.com',
+      },
+      // outros domínios
+    ],
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

@@ -69,7 +69,7 @@ export const initialBooks: Book[] = [
   },
   {
     id: '6',
-    title: 'Luni: A menina que brilhava para o saber',
+    title: 'Luni: A Menina Que Brilhava Sem Saber',
     author: 'Paula Azevêdo',
     genre: 'Infantil',
     year: 2025,

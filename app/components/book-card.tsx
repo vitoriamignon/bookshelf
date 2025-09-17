@@ -1,6 +1,7 @@
 "use client";
 
 import { Book } from "@/lib/types";
+import Image from "next/image";
 import {
   Card,
   CardContent,
@@ -23,11 +24,18 @@ export function BookCard({ book }: BookCardProps) {
         <CardDescription>{book.author}</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center">
-        <img
-          src={book.cover}
-          alt={`Capa de ${book.title}`}
-          className="h-48 w-32 object-cover rounded-md mb-4"
-        />
+        {/* usar next/image para otimização de imagens */}
+        {/* cover é uma URL (string) conforme app/lib/types.ts */}
+        <div className="h-48 w-32 relative rounded-md overflow-hidden mb-4">
+          <Image
+            src={book.cover}
+            alt={`Capa de ${book.title}`}
+            fill
+            sizes="(max-width: 768px) 128px, 192px"
+            style={{ objectFit: "cover" }}
+            priority={false}
+          />
+        </div>
         <div className="text-sm text-center">
           <p>
             **Ano:** {book.year}

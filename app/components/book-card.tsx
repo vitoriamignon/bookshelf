@@ -18,14 +18,12 @@ interface BookCardProps {
 
 export function BookCard({ book }: BookCardProps) {
   return (
-    <Card className="w-[350px]">
+    <Card className="w-[350px] dark:bg-[#1c406f] dark:border-blue-800">
       <CardHeader>
-        <CardTitle>{book.title}</CardTitle>
-        <CardDescription>{book.author}</CardDescription>
+        <CardTitle className="dark:text-white">{book.title}</CardTitle>
+        <CardDescription className="dark:text-gray-300">{book.author}</CardDescription>
       </CardHeader>
       <CardContent className="flex flex-col items-center">
-        {/* usar next/image para otimização de imagens */}
-        {/* cover é uma URL (string) conforme app/lib/types.ts */}
         <div className="h-48 w-32 relative rounded-md overflow-hidden mb-4">
           <Image
             src={book.cover}
@@ -36,20 +34,20 @@ export function BookCard({ book }: BookCardProps) {
             priority={false}
           />
         </div>
-        <div className="text-sm text-center">
+        <div className="text-sm text-center dark:text-gray-300">
           <p>
-            **Ano:** {book.year}
+            <b>Ano:</b> {book.year}
           </p>
           <p>
-            **Páginas:** {book.pages}
+            <b>Páginas:</b> {book.pages}
           </p>
           <p>
-            **Gênero:** {book.genre}
+            <b>Gênero:</b> {book.genre}
           </p>
           <p>
-            **Avaliação:** {book.rating} estrelas
+            <b>Avaliação:</b> {book.rating} estrelas
           </p>
-          <p className="mt-2 text-xs font-semibold uppercase">
+          <p className="mt-2 text-xs font-semibold uppercase dark:text-white">
             {book.status}
           </p>
         </div>

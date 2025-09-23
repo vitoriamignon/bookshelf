@@ -27,7 +27,7 @@
   .dark {
     --background: 222.2 84% 4.9%;
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 217 40% 20%; 
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
     --popover-foreground: 210 40% 98%;
@@ -46,6 +46,12 @@
     --ring: 224.3 76.3% 94.1%;
   }
 }
+.card {
+  background-color: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 
 @layer base {
   * {
